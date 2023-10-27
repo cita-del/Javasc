@@ -15,20 +15,9 @@ This project comprises a basic Ethereum token contract named `Token` that enable
 
 ### Executing program
 
-1.) Deployment:
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Deploy the contract on the Ethereum blockchain using tools such as Remix or Truffle.
-
-2.) Interaction:
-Interact with the deployed contract by calling its functions using an Ethereum wallet or development environment.
-
-3.) Mint Tokens:
-Use the mint function to create new tokens. Provide the address where the tokens will be minted and the value to be added.
-
-4.) Burn Tokens:
-Utilize the burn function to destroy tokens. Specify the address from which tokens will be burned and the amount to be subtracted.
-
-	Ensure that you have the necessary gas fees and proper network configurations set up to successfully execute the program.
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., ETH.sol). Copy and paste the following code into the file:
 
 ```
 
@@ -40,6 +29,7 @@ Token.mint(address, value);
 // Burn tokens from an address
 Token.burn(address, value);
 
+```
 ## Help
 
 If you encounter any issues during deployment or execution, ensure that you have the appropriate gas fees and proper network settings configured. Additionally, make sure your Ethereum wallet or development environment is compatible with the Solidity version used in this contract.
