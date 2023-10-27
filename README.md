@@ -21,7 +21,7 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
 
 Code blocks for commands:
 
-```
+```javascript
 contract Token {
 
     string public tokenName = "john";
