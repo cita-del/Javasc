@@ -17,13 +17,13 @@ The Error Solidity smart contract demonstrates various error-handling techniques
 
 Compile the Smart Contract:
 
-Use a Solidity compiler to compile the smart contract. Ensure successful compilation without errors.
+* Use a Solidity compiler to compile the smart contract. Ensure successful compilation without errors.
 Deploy the Smart Contract:
 
-Deploy the compiled smart contract to an Ethereum blockchain using Remix IDE or another deployment tool.
+* Deploy the compiled smart contract to an Ethereum blockchain using Remix IDE or another deployment tool.
 Interact with the Contract:
 
-Use Remix IDE or a JavaScript script with web3.js or ethers.js to interact with the contract.
+* Use Remix IDE or a JavaScript script with web3.js or ethers.js to interact with the contract.
 Calling Functions:
 
 Use the following examples to test different functions:
