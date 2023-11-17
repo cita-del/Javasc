@@ -1,10 +1,10 @@
-# Token Management System
+# Error Handling in Solidity Smart Contract
 
-The program is designed to facilitate token management on the Ethereum blockchain. It enables users to create (mint) and destroy (burn) tokens based on specific conditions. The main purpose is to provide a foundational understanding of token operations and to serve as a basic template for more complex token management systems.
+This project demonstrates error handling techniques in a Solidity smart contract. It includes functions that showcase the usage of `require()`, `revert()`, and `assert()` statements, as well as custom errors in Solidity.
 
 ## Description
 
-This project comprises a basic Ethereum token contract named `Token` that enables the creation and destruction of tokens. The contract allows users to mint tokens to a specified address and burn tokens based on certain conditions. It is a simplistic representation of a token management system built in Solidity.
+The Error Solidity smart contract demonstrates various error-handling techniques. It includes functions utilizing require() to enforce conditions, revert() to explicitly revert transactions, assert() to validate assertions, and a custom error (NoBalance) for more specific error handling. The contract illustrates how to handle exceptional conditions in a secure and controlled manner.
 
 
 ## Getting Started
@@ -15,45 +15,47 @@ This project comprises a basic Ethereum token contract named `Token` that enable
 
 ### Executing program
 
-To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+Compile the Smart Contract:
 
-Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., ETH.sol). Copy and paste the following code into the file:
+Use a Solidity compiler to compile the smart contract. Ensure successful compilation without errors.
+Deploy the Smart Contract:
 
-Code blocks for commands:
+Deploy the compiled smart contract to an Ethereum blockchain using Remix IDE or another deployment tool.
+Interact with the Contract:
+
+Use Remix IDE or a JavaScript script with web3.js or ethers.js to interact with the contract.
+Calling Functions:
+
+Use the following examples to test different functions:
 
 ```javascript
-contract Token {
 
-    string public tokenName = "john";
-    string public tokenAbbrv = "doe";
-    uint public totalSupply = 0;
+// Example for 'req' function (argument greater than 1000)
+await errorContract.req(1500);
 
-    mapping(address => uint) public balances;
+// Example for 'req' function (argument less than or equal to 1000, should revert)
+await errorContract.req(800);
 
-    function mint (address _address, uint _value) public{
-        totalSupply += _value;
-        balances[_address] += _value;
-    }
+// Example for 'rev' function (argument greater than 1000)
+await errorContract.rev(1500);
 
-     function burn (address _address, uint _value) public{
-         if (balances[_address] >= _value){
-        totalSupply -= _value;
-        balances[_address] -= _value;
-    }
-     }
-}
+// Example for 'rev' function (argument less than or equal to 1000, should revert)
+await errorContract.rev(800);
+
+// Example for 'ass' function (should revert if 'num' is not 0)
+await errorContract.ass();
+
+// Example for 'error' function with sufficient balance (withdrawal amount <= contract balance)
+await errorContract.error(10);
+
+// Example for 'error' function with insufficient balance (withdrawal amount > contract balance, should revert with custom error "NoBalance")
+await errorContract.error(100000);
+
 
 ```
 ## Help
 
-If you encounter any issues during deployment or execution, ensure that you have the appropriate gas fees and proper network settings configured. Additionally, make sure your Ethereum wallet or development environment is compatible with the Solidity version used in this contract.
-
-Advice for common problems or issues:
-- Double-check the address and value parameters while minting or burning tokens.
-- Ensure that the address has a sufficient balance before burning tokens.
-
-Command to run if the program contains helper info:
-Token.help()
+If you encounter any issues or have questions, please open an issue in the GitHub repository.
 
 ## Authors
 
